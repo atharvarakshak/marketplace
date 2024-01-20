@@ -1,0 +1,25 @@
+<!-- template tags - extends, for , if,block-->
+{% extends 'base.html'%}
+{% block content %}
+    <h1>About page</h1>
+    <p>username: {{request.user}}</p>
+    <h2>{{title|capfirst|title}}</h2>
+    {{html_text|striptags|slugify}}
+    <p>
+        {{my_text|capfirst}} ,{{my_number}} ,{{my_list}}<!--context variable-->
+    </p>
+    <ul>
+        <li>Item1 </li>
+        <li>Item2 </li>
+    </ul>
+    {% for abc in my_list %}
+            {% if abc == 55 %}
+                <li>{{forloop.counter}}-{{abc|add:25}}</li>
+            {% elif abc == "Abc" %}
+                <li> this is not a network</li>
+            {% else %}
+                <li>{{forloop.counter}}-{{abc}}</li>
+            {% endif %}
+            
+    {% endfor %}
+{% endblock content %}

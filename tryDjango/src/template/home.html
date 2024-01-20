@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Hello World</h1>
+    <p>username: {{request.user.is_authenticated}}</p>
+    <h2>This is a template</h2>
+{% endblock content %}
+
+<!-- template context -->
+<!-- inheritance of single html file into multiple -->

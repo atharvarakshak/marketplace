@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- get and POST method is used to take information web page and save in backend -->
+<!-- Post issecure with csrf token than using get method -->
+<form action="." method="POST"> {% csrf_token %}
+    {{ form.as_p }} 
+     <!--inbuilt method turns the form into a html form render out with paragraph text-->
+        <input type='submit' value='Save' />
+</form>
+
+{% endblock %}
